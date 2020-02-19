@@ -1,8 +1,9 @@
 /*
- * Dark Qt StyleSheet
+ * Dark Extended Qt StyleSheet
  * Special file for ChatLog, loaded in addition to global default.qss stylesheet
  *
- * Copyright (c) 2020 random-host.tv
+ * Copyright (c) 2019 random-host.tv
+ * Copyright (c) 2020 roshke.me
  *
  * Supported HTML Subset:
  *
@@ -94,7 +95,7 @@ p {
 .TextMessage_UserLink,
 .TextMessage_ChannelLink,
 .TextMessage_ServerLink {
-  color: #1CB0F4;
+  color: #178abf;
   font-weight: bold;
   text-decoration: none;
 }
@@ -115,8 +116,7 @@ p {
 .TextMessage_Welcome,
 .TextMessage_HostMessage,
 .TextMessage_Poke  {
-  color: #0AA537;
-  font-weight: bold;
+  color: #f2f2f2;
 }
 
 /* change messages (blue) */
@@ -133,25 +133,35 @@ p {
 {
   color: #7289DA;
 }
+/* test was in informational msgs */
+.TextMessage_ClientConnected,
+.TextMessage_ClientDisconnected
+{
+	color: #ABD1F5;
+}
+
+/* test was in informational msgs */
+.TextMessage_ClientJoined,
+.TextMessage_ClientLeft
+{
+	color: #DBDAF7;
+}
 
 /* informational messages (grey) */
 .TextMessage_Normal,
 .TextMessage_Connected,
-.TextMessage_ClientConnected,
-.TextMessage_ClientJoined,
 .TextMessage_Disconnected,
-.TextMessage_ClientDisconnected,
-.TextMessage_ClientSwitched,
-.TextMessage_ClientLeft,
-.TextMessage_ClientDropped
+.TextMessage_ClientSwitched
 {
   color: #607D8B;
 }
 
 /* warning messages (red) */
 .TextMessage_ClientKicked,
-.TextMessage_ClientBanned {
-  color: #C9070A;
+.TextMessage_ClientBanned,
+.TextMessage_ClientDropped 
+{
+  color: #f04345;
 }
 
 /* message timestamp (grey) */
@@ -182,12 +192,12 @@ p {
 .InfoFrame_Title .TextMessage_UserLink,
 .InfoFrame_Title .TextMessage_ChannelLink,
 .InfoFrame_Title .TextMessage_ServerLink {
-  color: #1CB0F4;
+  color: #19a3e3;
   font-weight: normal;
 }
 
 .InfoFrame_Title .InfoFrame_CustomNick {
-  color: #1CB0F4;
+  color: #19a3e3;
 }
 
 .InfoFrame_Table {
@@ -201,7 +211,7 @@ p {
 
 .Highlight,
 .InfoFrame_Table td.Highlight {
-  color: #1CB0F4;
+  color: #19a3e3;
 }
 
 .Important,
@@ -248,7 +258,7 @@ p {
 }
 
 a {
-  color: #1CB0F4;
+  color: #19a3e3;
 }
 
 a:hover {

@@ -1,7 +1,8 @@
 /*
-* Dark stylesheet for TeamSpeak 3 client
+* Dark Extended stylesheet for TeamSpeak 3 client
 *
-* Copyright (c) 2020 random-host.tv
+* Copyright (c) 2019 random-host.tv
+* Copyright (c) 2020 roshke.me
 *
 * Global overrides for QPalette::ColorRole values:
 * QPalette::Link = #1CB0F4;

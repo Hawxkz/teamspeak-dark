@@ -13,10 +13,6 @@ Templates must be placed in in a sub folder named like the theme (e.g. "styles/e
 Replaceable variables for server:
 
 SERVER_NAME
-SERVER_WELCOMEMESSAGE
-SERVER_HOSTMESSAGE
-SERVER_ID
-SERVER_UNIQUE_ID
 SERVER_VERSION
 SERVER_PLATFORM
 SERVER_CLIENTS_ONLINE
@@ -51,7 +47,7 @@ SERVER_REFRESH_ICON
         <a href="channelid://0" class="TextMessage_ServerLink">%%SERVER_NAME%%</a>
     </div>
 
-    <hr />
+    <hr/>
 
     <!-- begin basic info table -->
 
@@ -78,24 +74,25 @@ SERVER_REFRESH_ICON
         </tr>
     </table>
 
-    <br />
+    <br/>
 
     <!-- begin connection info table -->
+   
+<table id="InfoFrame_Table">
+  <tr><td class="label"><b>Current Channels:</b><</td><td> %%SERVER_CHANNELS_ONLINE%%</td></tr>
+  <tr title="Total Client Connections: %%SERVER_CLIENT_CONNECTIONS%%">
+    <td class="label"><b>Current Clients:</b></td>
+    <td>%%SERVER_CLIENTS_ONLINE%% / %%SERVER_MAXCLIENTS%% %%?SERVER_NO_RESERVED_SLOTS%%</td>
+    <td>%%SERVER_CLIENTS_ONLINE%% / %%SERVER_MAXCLIENTS%% (<span class="red">-%%?SERVER_RESERVED_SLOTS%% reserved</span>)</td>
+  </tr>
+  <tr title="Total ServerQuery Connections: %%SERVER_QUERY_CLIENT_CONNECTIONS%%">
+    <td class="label"><b>Current Queries:</b></td>
+    <td>%%SERVER_QUERYCLIENTS_ONLINE%% / %%SERVER_MAXCLIENTS%%</td>
+  </tr>
+  %%?PLUGIN_INFO_DATA%%
+</table>
 
-    <table class="InfoFrame_Table">
-        <tr>
-            <td class="Label">%%TR_SERVER_CLIENTS_ONLINE%%:</td>
-            <td>%%SERVER_CLIENTS_ONLINE%% / %%SERVER_MAXCLIENTS%% %%?SERVER_NO_RESERVED_SLOTS%%</td>
-            <td>%%SERVER_CLIENTS_ONLINE%% / %%SERVER_MAXCLIENTS%% (<span class="Important">-%%?SERVER_RESERVED_SLOTS%% reserved</span>)</td>
-        </tr>
-        <tr>
-            <td class="Label">%%TR_SERVER_CHANNELS_ONLINE%%:</td>
-            <td>%%SERVER_CHANNELS_ONLINE%%</td>
-        </tr>
-        %%?PLUGIN_INFO_DATA%%
-    </table>
-
-    <br />
+    <br/>
 
     <!-- begin refresh table -->
 

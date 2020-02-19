@@ -2,7 +2,8 @@
 TeamSpeak 3 Channel Info Frame Template
 
 Copyright (c) 2009-2020 TeamSpeak Systems GmbH
-Copyright (c) 2020 random-host.tv
+Copyright (c) 2019 random-host.tv
+Copyright (c) 2020 roshke.me
 
 The replaceable variables are embedded in "%%" like %%CHANNEL_NAME%%. At this time you can also use
 %%?CHANNEL_NAME%% (note the question mark), which is a tiny "if"- query. Use it, to remove the whole
@@ -21,7 +22,6 @@ Options (remove the "#" to enable):
 Replaceable variables for channels:
 
 CHANNEL_NAME
-CHANNEL_NAME_PLAIN
 CHANNEL_ID
 CHANNEL_ICON
 CHANNEL_ICON_SCALED
@@ -34,14 +34,6 @@ CHANNEL_ORDER
 CHANNEL_CODEC
 CHANNEL_CODEC_BITRATE
 CHANNEL_FLAGS
-CHANNEL_FLAG_PERMANENT
-CHANNEL_FLAG_SEMI_PERMANENT
-CHANNEL_FLAG_TEMPORARY
-CHANNEL_FLAG_PASSWORD
-CHANNEL_FLAG_DEFAULT
-CHANNEL_FLAG_NORMAL
-CHANNEL_FLAG_SPACER
-CHANNEL_FLAG_FORCED_SILENCE
 CHANNEL_SUBSCRIPTION
 CHANNEL_CLIENTS_COUNT
 CHANNEL_VOICE_DATA_ENCRYPTED
@@ -52,8 +44,6 @@ TEMP_CHANNEL_TIME_TO_DELETE
 PLUGIN_INFO_DATA
 IMAGES_MAX_WIDTH
 IMAGES_MAX_HEIGHT
-OPEN_FILE_BROWSER
-FILE_BROWSER_ICON
 -->
 
 <!-- begin dummy container including tooltip (single line html table) -->
@@ -66,6 +56,7 @@ FILE_BROWSER_ICON
         %%CHANNEL_ICON_SCALED%%
         &nbsp;
         <a href="channelid://%%CHANNEL_ID%%" class="TextMessage_ChannelLink">%%CHANNEL_NAME%%</a>
+		<span class="small" title="Channel ID"> (%%CHANNEL_ID%%)</span>
     </div>
 
     <hr/>
@@ -80,10 +71,15 @@ FILE_BROWSER_ICON
                 %%CHANNEL_CODEC%%
             </td>
         </tr>
+		  <tr>
+			<td class="label"><b>Codec Quality:</b></td>
+			<td>%%CHANNEL_CODEC_QUALITY%% (estimated bitrate: %%CHANNEL_CODEC_BITRATE%%/s), %%CHANNEL_VOICE_DATA_ENCRYPTED%%</td>
+		 </tr>
         <tr><td class="Label">%%?TR_CHANNEL_FLAGS%%:</td><td class="Highlight">%%?CHANNEL_FLAGS%%</td></tr>
         <tr><td class="Label">%%?TR_TEMP_CHANNEL_TIME_TO_DELETE%%:</td><td class="Important">%%?TEMP_CHANNEL_TIME_TO_DELETE%%</td></tr>
         <tr><td class="Label">%%TR_CHANNEL_CLIENTS_COUNT%%:</td><td>%%CHANNEL_CLIENTS_COUNT%% / %%CHANNEL_FLAG_MAXCLIENTS%%</td></tr>
         <tr><td class="Label">%%?TR_CHANNEL_MODERATED%%:</td><td class="Important">%%CHANNEL_MODERATED_ICON%%&nbsp;&nbsp;%%TR_YES%%</td></tr>
+		 <tr><td class="label"><b>Needed Talk Power:</b></td><td class="red"><img src="iconpath:MODERATED" height="16" width="16" alt="" title="Request Talk Power to be able to talk in this Channel." />&nbsp;&nbsp;%%?CHANNEL_NEEDED_TALK_POWER%%</td></tr>
         %%?PLUGIN_INFO_DATA%%
     </table>
 
